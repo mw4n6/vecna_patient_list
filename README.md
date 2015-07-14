@@ -1,7 +1,7 @@
 # vecna_patient_list
 Patient list app in conjunction with Vecna Technologies
 
-n this next stage, we ask that you spend two to three days to complete a short project. This project should showcase your technical skills as well as your knowledge and interest in user experience design. Attached to this e-mail is a file, "patients.json". It contains an array of fictitious patients with randomly generated demographic data, including: 
+In this next stage, we ask that you spend two to three days to complete a short project. This project should showcase your technical skills as well as your knowledge and interest in user experience design. Attached to this e-mail is a file, "patients.json". It contains an array of fictitious patients with randomly generated demographic data, including: 
 
 - First Name 
 - Last Name 
