@@ -1,6 +1,20 @@
 //core.js
 
-var Patients = angular.module('Patients', []);
+var Patients = angular.module('Patients', ['ngRoute']);
+
+var routeConfig = function(routeProvider){
+  $routeProvider
+  .when(
+    '/',
+    {
+      controller  : 'listController',
+      templateUrl : 'list.html'
+    }
+  )
+  .otherwise({
+    redirectTo: "/"
+  });
+};
 
 Patients.controller('mainController', ['$scope', '$http', function($scope, $http){
   $scope.patients = {};
@@ -16,4 +30,8 @@ Patients.controller('mainController', ['$scope', '$http', function($scope, $http
     .error(function(data){
       console.log('ERROR: ', data);
     });
+}]);
+
+Patients.controller('listController', ['$scope', function($scope){
+  
 }]);
