@@ -4,6 +4,9 @@ var Patients = angular.module('Patients', []);
 
 Patients.controller('mainController', ['$scope', '$http', function($scope, $http){
   $scope.patients = {};
+  $scope.search   = {};
+  $scope.recents  = {};
+  
   
   $http.get('/api/patients')
     .success(function(data){
