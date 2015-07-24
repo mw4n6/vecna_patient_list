@@ -9,9 +9,17 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js'></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.17/angular.min.js"></script>
+    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.17/angular-route.js'></script>
+    
+    <link rel="stylesheet" type="text/css" href='//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog.css' />
+    <link rel="stylesheet" type="text/css" href='//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog-theme-default.css' />
+    <link rel="stylesheet" type="text/css" href='//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog-theme-plain.css' />
+    <script src='//cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/js/ngDialog.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js'></script>
     <script src="core.js"></script>
+    <link rel="stylesheet" type="text/css" href="vecna_patient_portal.styles.css" />
+    <link rel="stylesheet" type="text/css" href="flaticon.css" />
   </head>
   <body ng-controller='mainController'>
     <!--
@@ -56,6 +64,113 @@
   Vecna Talent Team 
 
      -->
-    <div ng-view></div>
+    <div class='page-container'>
+      <div class = 'header-container'>
+        <div class = 'header-content'>
+            <!--Title Container-->
+            <div class = 'title-container'>
+              <!--Title Content-->
+              <div class = 'title-content'>
+                <h1>
+                  <div class = 'title-image-container'>
+                    <a href='#/patients'><img class = 'vecna-logo', src="vecna-logo.png"></a>
+                  </div>
+                  <div class = 'title-text-container'>
+                    <span class = 'title-text'>
+                      Patient Portal
+                    </span>
+                  </div>
+                </h1>
+              </div>
+            </div>
+            <!--Helper Container-->
+            <div class = 'helper-container'>
+              <div class = 'helper-welcome'>
+                <span>Welcome to the Vecna Patient Portal!</span>
+              </div>
+              <div class = 'helper-instructions'>
+                Here you can browse and edit all the patient profiles on your network. 
+                <ul>
+                  <li>Click on a patient to edit their profile</li>
+                  <li>Use sort to help you browse, or search for your patient by first and/or last name. Clear the search bar to undo the search</li>
+                  <li>Go to the recents list to see patients you've recently looked at, or favorite patients so you can get back to them quickly</li>
+                </ul>
+              </div>
+            </div>
+            <!--Search Container-->
+            <div class = 'search-container'>
+              <!--Search Bar-->
+              <div class = 'search-bar' ng-hide='menuState.show'>
+                <!--Search Input-->
+                <form>
+                  <div class = 'search-input-container'>
+                    <input ng-model='searchForm.query' class = 'search-input form-control input-lg' placeholder='Search by patient name...'> 
+                    </input>
+                  </div>
+                  <!--Search Button-->
+                  <div 
+                    class = 'search-button-container'
+                    style = "
+                      display: none;
+                    "
+                  >
+                    <button 
+                      ng-click="search()" 
+                      class = 'search-button'
+                      type="submit" 
+                    >
+                      Search
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!--Body-->
+      <div class ='body-container'>
+        <div class='body-content'>
+          <!-- List of lists-->
+          <div class = 'lists-container'>
+            <div class = 'lists'>
+              <div ng-repeat='list in lists'>
+                <a href = '#/{{list.key}}'>
+                  <div class = 'list' ng-class='{selected : list.key == getCurrentList().key}'>
+                    {{list.humanReadable}}
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!--Patients list-->
+          <div class = 'patients-container'>
+            <div class = 'patients-sort-container'>
+              <div class= 'patients-sort-label'>Sort by:</div>
+              <div class = 'patients-sort-select-container'>
+                <select
+                  ng-model='currentSort'
+                  ng-options='sort.key as sort.value for sort in sorts'
+                  class = 'patients-sort-select'
+                >
+                
+                </select>
+              </div>
+              <div class = 'patients-sort-select-container'>
+                <select
+                  ng-model='currentSortOrder'
+                  ng-options='order.key as order.value for order in orders'
+                  class = 'patients-sort-select'
+                >
+                
+                </select>
+              </div>
+            </div>
+            <div ng-view class='patients-list-container'></div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:10px; position:absolute; bottom:0px; left:15px; ">Created by Michael Wang for the Vecna Technical Evaluation 2015</div>
+      <div style="font-size:10px; position:absolute; bottom:0px; right:15px; ">Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+    </div>
   </body>
 </html>
