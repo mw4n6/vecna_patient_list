@@ -1,7 +1,46 @@
-<div>
-  <div ng-repeat="patient in patients">
-    <div>
-      {{patient.name.firstName}} {{patient.name.lastName}}
+<div class="patients-list">
+  <div 
+    ng-hide="viewPatients.length"
+    class="no-patients"
+  >
+    No patients match your query in {{getCurrentList().humanReadable}}
+  </div>
+  <div ng-repeat="patient in viewPatients">
+    <div 
+      class='patient-container'
+    >
+      <div class = 'icon-container' ng-class="{favorited : (inFavorites(listPatients[$index]) !== false)}" ng-click='toggleFavorite(listPatients[$index])'>
+        <div class='icon'>
+          <i 
+            class="flaticon-star167"
+          ></i>
+        </div>
+      </div>
+      <div class='patient' ng-click='selectPatient(listPatients[$index])'>
+        <div class='patient-name'>
+          {{patient.name.lastName}}, {{patient.name.firstName}} 
+        </div>
+        <div class = 'patient-info-container'>
+          <div class='patient-address patient-info'>
+            <div class='patient-info-label'>Address:</div>
+            <div class='patient-info-value'>
+              <div>
+                {{patient.address.street}}
+              </div>
+              <div>
+                {{patient.address.city}}, {{patient.address.state}} {{patient.address.zip}}
+              </div>
+            </div>
+          </div>
+          <div class='patient-birthdate patient-info'>
+            <div class='patient-info-label'>Birthdate:</div><div class='patient-info-value'>{{patient.birthDate}}</div>
+          </div>
+          <div class='patient-phone patient-info'>
+            <div class='patient-info-label'>Phone:</div><div class='patient-info-value'>{{patient.primaryPhone}}</div>
+          </div>
+          
+        </div>
+      </div> 
     </div>
   </div>
 </div>
