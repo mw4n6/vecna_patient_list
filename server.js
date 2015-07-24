@@ -40,11 +40,31 @@
   
   /* routes */
   
-  //create a patient
-  
-  //delete a patient
-  
   //modify a patient
+  app.post('/api/save_patient', function(req, res){
+    console.log(req.body);
+    var newPatient = req.body.patient;
+    var id = newPatient._id;
+    console.log(id);
+    
+    Patient.findById(id, function(err, patient){
+      if(err) res.send(err);
+      
+      for (var attrname in newPatient) { patient[attrname] = newPatient[attrname]; }
+      
+      // console.log(patient);
+      patient.save(function(err){
+        if(err) res.send(err);
+        
+        Patient
+        .find(function(err, patients){
+          if (err)  res.send(err);
+      
+          res.json(patients);
+        });
+      });
+    });
+  });
   
   //get all patients
   app.get('/api/patients', function(req, res){
