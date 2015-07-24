@@ -1,0 +1,126 @@
+<div>
+  <div class='dialog-title'>
+    <h1>
+      Edit Patient Profile
+    </h1>
+  </div>
+  <div class='dialog-firstName dialogInput-container'>
+    <div class='dialog-label-bold'>
+      First Name:
+    </div>
+    <div class='dialog-input-container'>
+      <input class='dialog-input' ng-model='thisPatient.name.firstName'></input>
+    </div>
+  </div>
+  <div class='dialog-lastName dialogInput-container'>
+    <div class='dialog-label-bold'>
+      Last Name:
+    </div>
+    <div class='dialog-input-container'>
+      <input class='dialog-input' ng-model='thisPatient.name.lastName'></input>
+    </div>
+  </div>
+  <div class='dialog-pPhone dialogInput-container'>
+    <div class='dialog-label-bold'>
+      Primary Phone:
+    </div>
+    <div class='dialog-input-container'>
+      <input class='dialog-input' ng-model='thisPatient.primaryPhone'></input>
+    </div>
+  </div>
+  <div class='dialog-wPhone dialogInput-container'>
+    <div class='dialog-label-bold'>
+      Work Phone:
+    </div>
+    <div class='dialog-input-container'>
+      <input class='dialog-input' ng-model='thisPatient.workPhone'></input>
+    </div>
+  </div>
+  <div class='dialog-birthDate dialogInput-container'>
+    <div class='dialog-label-bold'>
+      Birth Date:
+    </div>
+    <div class='birthDate-row'>
+      <div class='birthDate-column'>
+        <div class='birthDate-label'>
+          Month
+        </div>
+        <div>
+          <input class='birthDate-input' ng-model='birthDate.month'
+          ></input>
+        </div>
+      </div>
+      <div class='birthDate-column'>
+        <div class='birthDate-label'>
+          Day
+        </div>
+        <div>
+          <input class='birthDate-input' ng-model='birthDate.day'></input>
+        </div>
+      </div>
+      <div class='birthDate-column'>
+        <div class='birthDate-label'>
+          Year
+        </div>
+        <div>
+          <input class='birthDate-input' ng-model='birthDate.year'></input>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='dialog-ssn dialogInput-container'>
+    <div class='dialog-label-bold'>
+      SSN (last 4 digits):
+    </div>
+    <div class='dialog-input-container'>
+      <input class='dialog-input' ng-model='thisPatient.ssn'></input>
+    </div>
+  </div>
+  <div class='dialog-address dialogInput-container'>
+    <div class='dialog-label-bold'>
+      Address:
+    </div>
+    <div>
+      <div class='dialogInput-container'>
+        <div class='dialog-label'>
+          Street
+        </div>
+        <div class='dialog-input-container'>
+          <input class='dialog-input' ng-model='thisPatient.address.street'></input>
+        </div>
+      </div>
+      <div class='dialogInput-container'>
+        <div class='dialog-label'>
+          City
+        </div>
+        <div class='dialog-input-container'>
+          <input class='dialog-input' ng-model='thisPatient.address.city'></input>
+        </div>
+      </div>
+      <div class='dialogInput-container'>
+        <div class='dialog-label'>
+          State
+        </div>
+        <div class='dialog-input-container'>
+          <input class='dialog-input' ng-model='thisPatient.address.state'></input>
+        </div>
+      </div>
+      <div class='dialogInput-container'>
+        <div class='dialog-label'>
+          Zip Code
+        </div>
+        <div class='dialog-input-container'>
+          <input class='dialog-input' ng-model='thisPatient.address.zip'></input>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='toolbar-container ngdialog-buttons mt'>
+    <div class='toolbar-button-container'>
+      <button class="ngdialog-button ngdialog-button-primary" ng-click='closeThisDialog()'>Cancel</button>
+    </div>
+    <div class='toolbar-button-container'>
+      <button class="ngdialog-button ngdialog-button-primary" ng-click='save()'>Save</button>
+    </div>
+  </div>
+</div>
