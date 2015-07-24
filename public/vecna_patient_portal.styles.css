@@ -1,0 +1,357 @@
+/*Body*/
+body{
+  background-color: #1f2226;
+  font-family: 'Calibri', serif;
+}
+
+
+/*Page*/
+
+  .page-container{
+    border-radius: 5px;
+    background-color: white;
+    position: absolute;
+    left: calc((100% - 900px) / 2);
+    right: calc((100% - 900px) / 2);
+    top: 10px;
+    bottom: 10px;
+  }
+
+/*Header*/
+
+  /*Title*/
+    .title-content{
+      text-align:center;
+    }
+
+    .title-text-container{
+      display:inline-block;
+      margin-top: 10px;
+      vertical-align: top;
+      height: 80px;
+    }
+
+    .title-text{
+      display:inline-block;
+      vertical-align: bottom;
+      font-style: italic;
+      margin-top: 50px;
+      font-family: 'Calibri', serif;
+    }
+
+    .title-image-container{
+      display:inline-block;
+      vertical-align: bottom;
+    }
+
+    .vecna-logo{
+      width: 350px;
+    }
+
+  /*Helper*/
+    .helper-container{
+      margin-top: 20px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    
+    .helper-welcome{
+      font-size: 30px;
+      font-style: italic;
+      color: #788391;
+    }
+    
+    .helper-instructions{
+      margin-top: 5px;
+      font-size: 13px;
+    }
+    
+  /*Search*/
+  
+    .search-container{
+      margin-left:15px;
+      margin-right:15px;
+      background-color: #dbdbe0;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    
+    .search-bar{
+      width: calc(100% - 20px);
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    
+    .search-input-container{
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .search-input{
+      width: 100%;
+    }
+    
+    .search-button-container{
+      display: inline-block;
+    }
+    
+    .search-button{
+      
+    }
+    
+/* Body */
+
+.body-container{
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: #dbdbe0;
+  border-radius: 5px;
+  height: calc(100% - 354px);
+}
+
+.body-content{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  height: 100%;
+}
+
+  /*  Lists */
+  
+  .lists-container{
+    display: inline-block;
+    background-color: white;
+    vertical-align: top;
+    height: 100%;
+    width: 200px;
+    margin-right: 5px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+  }
+  
+  .lists{
+    height: 100%;
+    font-size: 20px;
+  }
+  
+  .list{
+    line-height: 40px;
+    text-indent: 10px;
+  }
+  
+  .list.selected{
+    font-weight:bold;
+    background-color: #c5c5c9;
+  }
+  
+  .list:hover{
+    font-weight:bold;
+    background-color: #c5c5c9;
+    cursor: pointer;
+  }
+  
+  /*  patients  */
+  
+  .patients-container{
+    display:inline-block;
+    width: calc(100% - 200px - 10px);
+    height: 100%;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+  }
+  
+  .patients-sort-container{
+    line-height: 30px;
+    background-color: #c9c9c9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .patients-sort-label{
+    display:inline-block;
+    margin-left: 15px;
+  }
+  
+  .patients-sort-select-container{
+    display:inline-block;
+  }
+  
+  .patients-sort-select{
+    background  : transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .patients-list-container{
+    background-color: white;
+    height: calc(100% - 25px);
+    overflow-y: scroll;
+    background-color: #e0e0e0;
+  }
+  
+  .patients-list{
+    height: 100%;
+  }
+  
+  .no-patients{
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    color: #9c9c9c;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+  
+  .patient-container{
+    border-bottom: 1px solid #e0e0e0;
+    background-color: white;
+    height: 100px;
+  }
+  
+  .icon-container{
+    display:inline-block;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 40px;
+    height: 100%;
+    vertical-align:top;
+    background-color: #f5f5f5;
+  }
+  
+  .icon{
+    display:inline-block;
+    vertical-align: -150%;
+  }
+  
+  .flaticon-star167{
+    margin-left: -20px;
+    
+  }
+  
+  .icon-container:hover{
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .icon-container.favorited{
+    color: #e5e500;
+    background-color:#868686;
+  }
+  
+  .patient{
+    display:inline-block;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: calc(100% - 40px - 4px);
+    height: 100%;
+  }
+  
+  .patient:hover{
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  
+  .patient-name{
+    font-weight: 1px;
+    line-height: 40px;
+    font-size: 22px;
+    text-indent: 10px;
+  }
+  
+  .patient-info-container{
+    margin-left: 15px;
+  }
+  
+  .patient-info{
+    font-size: 11.5px;
+    
+  }
+  
+  .patient-info+.patient-info{
+    margin-top: 2px;
+  }
+  
+  .patient-address{
+    float: right;
+    width: 250px;
+  }
+  
+  .patient-info-label{
+    display: inline-block;
+    width: 65px;
+    vertical-align: top;
+    color: #9c9c9c;
+  }
+  
+  .patient-info-value{
+    display: inline-block;
+  }
+
+/* Dialog */
+  
+  .dialog-title{
+    margin-bottom: 30px;
+  }
+  
+  .dialogInput-container{
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .dialog-input-container{
+    display: inline-block;
+    width: calc(100% - 145px);
+  }
+  
+  .dialog-input{
+    width: 100%;
+  }
+  
+  .dialog-label-bold{
+    display: inline-block;
+    width: 140px;
+    font-weight: bold;
+  }
+  
+  .dialog-label{
+    display: inline-block;
+    width: 140px;
+    text-indent: 10px;
+    font-style: italic;
+  }
+  
+  .birthDate-row{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .birthDate-column{
+    width: calc(33% - 12px);
+    display:inline-block;
+    text-align:center;
+    margin-left:5px;
+    margin-right: 5px;
+  }
+  
+  .birthDate-label{
+    font-style: italic;
+  }
+  
+  .birthDate-input{
+    width: 100%;
+    text-align:center;
+  }
+  
+  .toolbar-container{
+    margin-top:20px;
+    margin-right:1px;
+  }
+  
